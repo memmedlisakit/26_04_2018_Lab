@@ -1,0 +1,115 @@
+$color01:#eb7a14;
+$color02:#3ec147;
+$color03:#9d3dc2;
+$color04:#ef106f;
+$color05:#29c9d6;
+@keyframes top_left {
+    from {
+        transform: rotateZ(0deg) scale(1.0);
+        background-color: $color01;
+    }
+    to {
+        transform: rotateZ(360deg) scale(1.1);
+        background-color: $color02;
+    }
+}
+
+@keyframes top_right {
+    from {
+        transform: rotateZ(0deg) scale(1.0);
+        background-color: $color02;
+    }
+    to {
+        transform: rotateZ(-360deg) scale(1.1);
+        background-color: $color01;
+    }
+}
+
+@keyframes bottom_right {
+    from {
+        transform: rotateZ(0deg) scale(1.0);
+        background-color: $color03;
+    }
+    to {
+        transform: rotateZ(360deg) scale(1.1);
+        background-color: $color04;
+    }
+}
+
+@keyframes bottom_left {
+    from {
+        transform: rotateZ(0deg) scale(1.0);
+        background-color: $color04;
+    }
+    to {
+        transform: rotateZ(-360deg) scale(1.1);
+        background-color: $color03;
+    }
+}
+
+@keyframes main{
+    from {
+        transform: rotateZ(0deg) scale(1.0);
+        background-color: $color05;
+    }
+    to {
+        transform: rotateZ(-360deg) scale(1.1);
+        background-color: darken($color05, 25%);
+    }
+}
+
+.main {
+    margin: 150px auto;
+    width: 250px;
+    height: 250px;
+    background-color: $color05;
+    animation: main 5s linear infinite;
+    position: relative;
+}
+
+%base {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+}
+
+.top-left {
+    @extend %base;
+    top: -60px;
+    left: -60px;
+    animation: top_left 1s linear infinite;
+    background-color: $color01;
+}
+
+.top-right {
+    @extend %base;
+    right: -60px;
+    top: -60px;
+    animation: top_right 1s linear infinite;
+    background-color: $color02;
+}
+
+.bottom-right {
+    @extend %base;
+    bottom: -60px;
+    right: -60px;
+    animation: bottom_right 1s linear infinite;
+    background-color: $color03;
+}
+
+.bottom-left {
+    @extend %base;
+    bottom: -60px;
+    left: -60px;
+    animation: bottom_left 1s linear infinite;
+    background-color: $color04;
+}
+.body{
+    width: 30px;
+    height: 300px;
+    background-color: black;
+    position: absolute;
+    top: 350px;
+    left: (100%/2);
+    z-index: -5;
+}
